@@ -2,7 +2,7 @@
 
 ## Syntax Rules
 ### Python is case sensitive. 
-Some programming languages are case sensitive with to their identifiers (variable, and function name for example)
+Some programming languages are case sensitive with their identifiers (variable, and function name for example).
 So, in Python a variable with the name `a`, and another with the name `A`, are two different things in Python.
 
 To try and illustrate this open the terminal and start Python
