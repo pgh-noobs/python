@@ -17,7 +17,7 @@ $ python
 ```
 If this was a language that was not case sensitive, then `a` and `A` would both be equal to 2.
 
-### Indentation define code blocks or scope
+### Indentation defines code blocks
 Python uses spaces! 4 space is what python uses to denote a code block.
 One of the things about Python is it tries to eliminate the unnecessary use characters for 
 defining blocks of code, like `{}` as other languages will use. This is meant to make 
@@ -29,7 +29,16 @@ equal to `1`. To end the code block just start a new line without the 4 spaces o
 a = 1
 if a == 1:
     print(a)
+
+def foo():
+    b = 1
+    if b == 1:
+        print(b)
+
+foo()
 ```
+This four space things, it just keeps going. Just keep adding or removing four spaces to start or
+end and code block.
 
 ### Comments
 Okay, I know not very interesting. But they are important for the future you that will be reading your code
@@ -45,7 +54,6 @@ Python does have documentation strings, which are not block comments, even thoug
 language to do it.
 
 ```python
-
 def foo():
     '''
     This is a doc string.
@@ -54,5 +62,54 @@ def foo():
 
 foo()
 print(foo.__doc__)
+```
+
+Unique to python is three double quotes. This does not comment out code but instead creates a string over
+many lines of text.
+```Python
+a = """
+This
+is
+a
+multi line
+string
+"""
+```
+
+### Statement Terminators
+In Python you can end a statements with a new line. You can also use a semi-colon.
+```Python
+print("Hello")
+print("World")
+
+print("Hello"); print("World")
+```
+This will fail with a syntax error/
+```Python
+print("Hello") print("World")
+```
+
+### Line Continuation
+Sometimes you need to wrap a statement across more than one line. In python you do this with a slash.
+This is mostly used in the terminal of python REPL.
+
+```bash
+$ python
+>>> a = 1
+>>> if a == 1: \
+...     print(a)
+...
+1
+>>>
+```
+
+### Library Import
+Python scripts can include other scripts by using the `import` keyword.
+```bash
+$ python
+>>> import sys
+>>> sys.platform
+'linux2'
+>>>
 ```
 
