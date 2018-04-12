@@ -18,13 +18,14 @@ $ python
 If this was a language that was not case sensitive, then `a` and `A` would both be equal to 2.
 
 ### Indentation defines code blocks
-Python uses spaces! 4 space is what python uses to denote a code block.
-One of the things about Python is it tries to eliminate the unnecessary use characters for 
+Python uses spaces! 4 spaces are what python uses to denote a code block.
+One of the things about Python is it tries to eliminate unnecessary characters for 
 defining blocks of code, like `{}` as other languages will use. This is meant to make 
 Python more readable.
 
 For example. In the below code sample the `print` function will only run when the variable `a` is
-equal to `1`. To end the code block just start a new line without the 4 spaces of indent.
+equal to `1`. The block of code is the if statement and the indented lines under it.
+To end the code block just start a new line without the 4 spaces of indent.
 ```python
 a = 1
 if a == 1:
@@ -37,8 +38,8 @@ def foo():
 
 foo()
 ```
-This four space things, it just keeps going. Just keep adding or removing four spaces to start or
-end and code block.
+This four spaces thing, it just keeps going. Just keep adding or removing four spaces to start or
+end and code blocks.
 
 ### Comments
 Okay, I know not very interesting. But they are important for the future you that will be reading your code
