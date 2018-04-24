@@ -104,10 +104,15 @@ computer work with 0's and 1's, or BITs. If you want to change the value of a va
 this is it. You can all compress data with these operators.
 
 `&` - And
+
 `|` - Inclusive Or
+
 `~` - Not
+
 `^` - Exclusive Or
+
 `<<` - Shift Left ( 5 * (2^2) this is normal math symbols )
+
 `>>` - Shift Right ( 5 / (2^2) this is normal math symbols )
 
 |   |   `&`  |   `|`  |   `~`  |   `^`  |  `<<` (integer) |  `>>` (integer) |
