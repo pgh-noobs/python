@@ -70,14 +70,15 @@ This is good when you need to see if characters are in a string.
 This will turn your positive results negative and negative results positive.
 
 
-## Data and operators work together
-Data Type | Operators Allowed
---------- | -------
-int | ==, !=, <=, >=, <, >, is
-float | ==, !=, <=, >=, <, >, is
-complex (e.g. 3j) | ==, !=, is
-bool | ==, !=, <=, >=, <, >, is
-str (string) | ==, !=, <=, >=, <, >, is, in, not in
+### Data and operators work together
+
+| Data Type | Operators Allowed |
+| --------- | ----------------- |
+| int       | ==, !=, <=, >=, <, >, is |
+| float     | ==, !=, <=, >=, <, >, is |
+| complex (e.g. 3j) | ==, !=, is |
+| bool      | ==, !=, <=, >=, <, >, is |
+| str (string) | ==, !=, <=, >=, <, >, is, in, not |
 
 ## Logical Operators
 Python uses the common logical operators of, `and`, `or`, `not`. The truth table below can be very helpful to 
@@ -88,6 +89,7 @@ familiar with this. It means that if the first operand fails the test the other 
 can be very handy for avoiding runtime errors.
 
 ### Truth Table
+
 |   a   |   b   | a and b | a or b | not b | a = b  |
 | :---: | :---: | :-----: | :----: | :---: | :----: |
 | False | False | False   | False  | True  | False  |
