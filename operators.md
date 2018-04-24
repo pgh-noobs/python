@@ -53,11 +53,14 @@ used with all the basic types of data.
 ### Symbolic
 `==, !=, <, >, <=, >=`
 
-### Identifiers
-`is, in`
+### Identity
+`is`
 
-### Compound operators
-`not in`
+### Membership
+`in`
+
+### Negation Operators
+`not`
 
 Data Type | Operators Allowed
 --------- | -------
@@ -66,4 +69,40 @@ float | ==, !=, <=, >=, <, >, is
 complex (e.g. 3j) | ==, !=, is
 bool | ==, !=, <=, >=, <, >, is
 str (string) | ==, !=, <=, >=, <, >, is, in, not in
+
+## Logical Operators
+Python uses the common logical operators of, `and`, `or`, `not`. The truth table below can be very helpful to 
+understand or remember for people new to coding. It is the same in all languages.
+
+Some will be happy to know that the Python `and`, and `or`, operators short circuit, For those that are not 
+familiar with this. It means that if the first operand fails the test the other operand is not evaluated. This
+can be very handy for avoiding runtime errors.
+
+### Truth Table
+|  a  |  b  | a and b | a or b | not b | a != b |
+| :-: | :-: | :-----: | :----: | :---: | :----: |
+| False | False | False | False | True | False |
+| False | True | False | True | False | True |
+| True | False | False | True | True | True |
+| True | True | True | True | False | False |
+
+
+## Bit-wise Operators
+The black magic of computer programming, even for experienced developers! So, all processors and memory in a
+computer work with 0's and 1's, or BITs. If you want to change the value of a variable in the most efficient way
+this is it. You can all compress data with these operators.
+
+`&` - And
+`|` - Inclusive Or
+`~` - Not
+`^` - Exclusive Or
+`<<` - Shift Left ( 5 * (2^2) this is normal math symbols )
+`>>` - Shift Right ( 5 / (2^2) this is normal math symbols )
+
+|   |   `&`  |   `|`  |   `~`  |   `^`  |  `<<` (integer) |  `>>` (integer) |
+| - | :----: | :----: | :----: | :----: | :----: | :----: |
+|   | 0b0011 | 0b0011 |        | 0b0011 | 0b0101 (5) | 0b0101 (5) |
+|   | 0b0101 | 0b0101 | ~0b01  | 0b0101 | 0b0101 << 2 | 0b0101 >> 2 |
+| = | 0b0001 | 0b0111 | -0b10  | 0b0110 | 0b010100 (20) | 0b1 (1) |
+
 
