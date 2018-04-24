@@ -79,7 +79,7 @@ familiar with this. It means that if the first operand fails the test the other 
 can be very handy for avoiding runtime errors.
 
 ### Truth Table
-|   a   |   b   | a and b | a or b | not b | a != b |
+|   a   |   b   | a and b | a or b | not b | a \!= b |
 | :---: | :---: | :-----: | :----: | :---: | :----: |
 | False | False | False   | False  | True  | False  |
 | False | True  | False   | True   | False | True   |
