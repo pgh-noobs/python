@@ -56,12 +56,21 @@ used with all the basic types of data.
 ### Identity
 `is`
 
+When this operator returns true this means that each operand refers to the same piece of memory.
+
+
 ### Membership
 `in`
+
+This is good when you need to see if characters are in a string. 
 
 ### Negation Operators
 `not`
 
+This will turn your positive results negative and negative results positive.
+
+
+## Data and operators work together
 Data Type | Operators Allowed
 --------- | -------
 int | ==, !=, <=, >=, <, >, is
