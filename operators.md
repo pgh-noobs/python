@@ -112,9 +112,9 @@ numeric value such as 1, 2, 4, 8, 16, etc. These can be combined into a single n
 
 `^` - Exclusive Or
 
-`<<` - Shift Left ( m * n<sup>2</sup> this is normal math symbols )
+`<<` - Shift Left ( This is equivalent to,  m * n<sup>2</sup> )
 
-`>>` - Shift Right ( m / n<sup>2</sup> this is normal math symbols )
+`>>` - Shift Right ( This is equivalent to, m / n<sup>2</sup> )
 
 |   |   `&`  |   `|`  |   `~`  |   `^`  |  `<<` (integer) |  `>>` (integer) |
 | - | :----: | :----: | :----: | :----: | :----: | :----: |
