@@ -70,7 +70,7 @@ This is good when you need to see if characters are in a string.
 This will turn your positive results negative and negative results positive.
 
 
-### Data and operators work together
+### Data and operators that work together
 
 | Data Type | Operators Allowed |
 | --------- | ----------------- |
@@ -99,9 +99,10 @@ can be very handy for avoiding runtime errors.
 
 
 ## Bit-wise Operators
-The black magic of computer programming, even for experienced developers! So, all processors and memory in a
-computer work with 0's and 1's, or BITs. If you want to change the value of a variable in the most efficient way
-this is it. You can all compress data with these operators.
+The black art of computer programming, even for experienced developers! So, all processors and memory in a
+computer work with 0's and 1's, or BITs. These operators help you change those BITs. If you want to change the 
+value of a variable in the most efficient way this is it. These operators are commonly used to combine and check for flags. Flags are constant variables with
+numeric value such as 1, 2, 4, 8, 16, etc. These can be combined into a single numeric value.
 
 `&` - And
 
@@ -111,9 +112,9 @@ this is it. You can all compress data with these operators.
 
 `^` - Exclusive Or
 
-`<<` - Shift Left ( 5 * (2^2) this is normal math symbols )
+`<<` - Shift Left ( m * n<sup>2</sup> this is normal math symbols )
 
-`>>` - Shift Right ( 5 / (2^2) this is normal math symbols )
+`>>` - Shift Right ( m / n<sup>2</sup> this is normal math symbols )
 
 |   |   `&`  |   `|`  |   `~`  |   `^`  |  `<<` (integer) |  `>>` (integer) |
 | - | :----: | :----: | :----: | :----: | :----: | :----: |
