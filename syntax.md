@@ -72,7 +72,7 @@ a = """
 This
 is
 a
-multi line
+multiline
 string
 """
 ```

@@ -40,17 +40,28 @@ number of type specified by the integer operand.
 
 ```
 >>> "abc" + "def"
->>> "abcdef"
+"abcdef"
 >>>
 >>> "abc" * 3
->>> "abcabcabc"
+"abcabcabc"
+```
+
+Slicing. In Python you can pull parts of a string out by using the slicing or sequence operator, `[]`.
+
+```
+>>> "hello world"[:5]
+'hello'
+>>> "hello world"[3:5]
+'lo'
+>>> "hello world"[-5:]
+'world'
 ```
 
 ## Relational Operators
 Python can compare data in several ways. Each operator will return true or false, and not all operators can be
 used with all the basic types of data.
 
-### Symbolic
+### Comparison
 `==, !=, <, >, <=, >=`
 
 ### Identity
