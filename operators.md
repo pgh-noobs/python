@@ -5,24 +5,24 @@
 Operator | Meaning | Example
 -------- | ------- | -------
 `+` | Add two numbers. Also called a unary operator | `print(1+2) # 3` `+3`
-`-` | Subtract two number. Also called a unary operator | `print(2-1) # 1` `-3`
+`-` | Subtract two numbers. Also called a unary operator | `print(2-1) # 1` `-3`
 `*` | Multiplication. Also called a binary operator | `print(2*2) # 4`
 `/` | Division. *Caution* with python 2.7 and 3. Also a binary operator | `print(4/2) # 2`
-`**` | Exponent, or Power. This too is a binary operator | `print(2**2) # 4`
+`**` | Exponent, or Power. This to is a binary operator | `print(2**2) # 4`
 `//` | Floor division. This means the remainder is ignored, not rounded off. Again binary operator| `print(11//3) # 3`
 `%` | Modulo division. This returns the remainder of the division operation | `print(11%3) # 2`
 
 ### Imaginary Numbers
-So, imaginary numbers. In Python you can do math with imaginary numbers. In math you might remember that the
+So, imaginary numbers,in Python you can do math with imaginary numbers. In math you might remember that the
 imaginary number was represented with an _i_, in Python it is _j_. 
 
 Try this with all the operators. You might be surprised at the result.
 `print(3j+3j)`
 
 ### Implicit Conversion
-Implicit conversion is when Python automatically will converts the value from one type to another for you.
+Implicit conversion is when Python automatically converts the value from one type to another for you.
 Python arithmetic operators will convert values of one type to another in a specific order from bool to complex.
-You cannot implicitly convert back the other. For example 1.5 cannot convert to 1 or 2, it's just not the same thing.
+You cannot implicitly convert back the otherway. For example 1.5 cannot convert to 1 or 2, it's just not the same thing.
 But 1 can convert to 1.0, they are roughly the same thing.
 
 bool to int,
@@ -35,7 +35,7 @@ are asking to convert a value to a type that Python will not do implicitly becau
 you can convert values up and down the type order mentioned above.
 
 ## String Operators
-Simple, `+`, `*`. The first `+` concatenates two strings. The second `*` repeats a sequence of characters the
+Simple, `+`, `*`. The first `+` concatenates (joins) two strings. The second `*` repeats a sequence of characters the
 number of type specified by the integer operand.
 
 ```
@@ -95,8 +95,8 @@ This will turn your positive results negative and negative results positive.
 Python uses the common logical operators of, `and`, `or`, `not`. The truth table below can be very helpful to 
 understand or remember for people new to coding. It is the same in all languages.
 
-Some will be happy to know that the Python `and`, and `or`, operators short circuit, For those that are not 
-familiar with this. It means that if the first operand fails the test the other operand is not evaluated. This
+Some will be happy to know that the Python `and`, and `or`, operators short circuit. For those that are not 
+familiar with this, it means that if the first operand fails the test the other operand is not evaluated. This
 can be very handy for avoiding runtime errors.
 
 ### Truth Table

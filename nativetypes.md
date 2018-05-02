@@ -1,8 +1,8 @@
 # Native Types
 
 ## Integer
-Python has two kinds of integers. int, and long. In other languages these are two very different things
-Python appears to treat them as similar things. The int type can hold values well over 2.14 billion.
+Python has two kinds of integers. `int`, and `long`. In other languages these are two very different things
+Python appears to treat them as similar thing. The int type can hold values well over 2.14 billion.
 Try and see what the largest number is that you can use before python interprets it as a long.
 
 ## Float

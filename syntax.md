@@ -23,8 +23,8 @@ One of the things about Python is it tries to eliminate unnecessary characters f
 defining blocks of code, like `{}` as other languages will use. This is meant to make 
 Python more readable.
 
-For example. In the below code sample the `print` function will only run when the variable `a` is
-equal to `1`. The block of code is the if statement and the indented lines under it.
+For example, in the code sample below the `print` function will only run when the variable `a` is
+equal to `1`. The block of code is the `if` statement and the indented lines under it.
 To end the code block just start a new line without the 4 spaces of indent.
 ```python
 a = 1
@@ -39,7 +39,7 @@ def foo():
 foo()
 ```
 This four spaces thing, it just keeps going. Just keep adding or removing four spaces to start or
-end and code blocks.
+end code blocks.
 
 ### Comments
 Okay, I know not very interesting. But they are important for the future you that will be reading your code
@@ -78,14 +78,14 @@ string
 ```
 
 ### Statement Terminators
-In Python you can end a statements with a new line. You can also use a semi-colon.
+In Python you can end statements with a new line. You can also use a semi-colon.
 ```Python
 print("Hello")
 print("World")
 
 print("Hello"); print("World")
 ```
-This will fail with a syntax error/
+This will fail with a syntax error
 ```Python
 print("Hello") print("World")
 ```
