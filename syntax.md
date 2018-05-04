@@ -6,14 +6,11 @@ Some programming languages are case sensitive with their identifiers (variable, 
 So, in Python a variable with the name `a`, and another with the name `A`, are two different things in Python.
 
 To try and illustrate this open the terminal and start Python
-```bash
-$ python
->>> a = 1
->>> A = 2
->>> print(a)
-1
->>> print(A)
-2
+``` Python
+a = 1
+A = 2
+print(a)
+print(A)
 ```
 If this was a language that was not case sensitive, then `a` and `A` would both be equal to 2.
 
@@ -26,7 +23,7 @@ Python more readable.
 For example, in the code sample below the `print` function will only run when the variable `a` is
 equal to `1`. The block of code is the `if` statement and the indented lines under it.
 To end the code block just start a new line without the 4 spaces of indent.
-```python
+``` Python
 a = 1
 if a == 1:
     print(a)
@@ -47,14 +44,14 @@ wondering what your intention was.
 
 So, Python only has line level comments. Lots of languages have block level comments, not Python.
 
-```Python
+``` Python
 # This is a comment
 ```
 
 Python does have documentation strings, which are not block comments, even though some people abuse the
 language to do it.
 
-```python
+```Python
 def foo():
     '''
     This is a doc string.
@@ -67,7 +64,7 @@ print(foo.__doc__)
 
 Unique to python is three double quotes. This does not comment out code but instead creates a string over
 many lines of text.
-```Python
+``` Python
 a = """
 This
 is
@@ -79,14 +76,14 @@ string
 
 ### Statement Terminators
 In Python you can end statements with a new line. You can also use a semi-colon.
-```Python
+``` Python
 print("Hello")
 print("World")
 
 print("Hello"); print("World")
 ```
 This will fail with a syntax error
-```Python
+``` Python
 print("Hello") print("World")
 ```
 
@@ -94,7 +91,7 @@ print("Hello") print("World")
 Sometimes you need to wrap a statement across more than one line. In python you do this with a slash.
 This is mostly used in the terminal of python REPL.
 
-```bash
+``` Bash
 $ python
 >>> a = 1
 >>> if a == 1: \
@@ -106,11 +103,9 @@ $ python
 
 ### Library Import
 Python scripts can include other scripts by using the `import` keyword.
-```bash
-$ python
->>> import sys
->>> sys.platform
+``` Python
+import sys
+sys.platform
 'linux2'
->>>
 ```
 

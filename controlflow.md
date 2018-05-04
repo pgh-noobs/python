@@ -9,7 +9,7 @@ in python. Second, is that the, else if part is abbreviated to `elif`. Use this 
 The `elif` branch, is a substitute for `switch` and `case` statements in other languages. So don't go
 looking for `switch` and `case` statements in python, they don't exist.
 
-```
+``` Python
 a=3
 if a<3 :
     print("A is less than 3")
@@ -45,10 +45,13 @@ print("a is equal to " + a)
 ```
 
 ``` Python
+import string
+
 a="This is a string that we can loop over, processing each character."
 letters=0
 white_space=0
 punctuation=0
+early=True
 
 for c in a :
     if c in string.ascii_letters :
@@ -60,19 +63,76 @@ for c in a :
     elif c in string.digits :
         break
 else :
+    early=False
     print("else clause summary")
-    print("We found " + letters + ", letters")
-    print("we found " + punctuation + ", punctuation marks")
-    print("We found " + white_space + ", white space characters")
+    print(str.format("We found {}, letters", letters))
+    print(str.format("we found {}, punctuation marks", punctuation))
+    print(str.format("We found {}, white space characters", white_space))
 
-print("Did the loop end early?")
+print(str.format("Did the loop end early? {}", early))
 ```
 
 ## Error Handling
+### Syntax Errors
+There are two basic errors you will get from Python, __syntax errors__ and __exceptions__.
+You will see syntax errors a lot while learning Python. 
+```
+>>> while True print('Hello world')
+  File "<stdin>", line 1
+   while True print('Hello world')
+                  ^
+SyntaxError: invalid syntax
+```
+The parser is going to show you earliest point where the error was detected. The little arrow
+points to the token that caused the parser to notice the error. In the example the arrow is 
+pointing to the `print` funtion. It was the last token evaluated that showed the error. In this
+case, a `:` was missing just before the `print` function.
+
+### Exceptions
+These are more commonly referred to as runtime errors. This means your code compiled fine,
+but some activity in the code is causing the application to fail.
+``` Bash
+>>> 10 * (1/0)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ZeroDivisionError: division by zero
+```
+
+### Let's Handle Them
+In stead of letting an error go and crash (stop) your application, you can catch them and do something special
+to keep you program running. To do this in Python we use a `try` statement. 
+
+The `try` block is the part that you want to run and handle errors from. The `except` block is where you can put 
+code to handle the error from the `try` block. The `else` block is something again that is special to python. 
+The code you put in the `else` will run if there are no errors. The `finally` block is code that will run everytime, 
+error or no error. This is usually a good place to put code that you want to gaurantee will run.
+
 ```
 try:
-    do something
-except
+    # This block is the normal code you want to run.
+except Exception as e:
+    # This block is the code that will do thing special
+    # when the specified error is thrown.
+else:
+    # This block run only when there are no errors.
+finally:
+    # This is the block that you want to gaurantee will run.
+```
+
+```
+def divide(x,y):
+    try:
+        result=x/y
+    except ZeroDivisionError:
+        print("You can't divide by zero")
+    else:
+        print("The answer is", result)
+    finally:
+        print("Was your division ok?")
+
+divide(2,1)
+divide(2,0)
+divide("2", "1")
 ```
 
 ## Context blocks
@@ -84,4 +144,7 @@ with expression as variable, expression as variable :
 
 ## Iterators & Generators
 
+### Yield
+
 ## Comprehensions
+
