@@ -76,7 +76,7 @@ print(str.format("Did the loop end early? {}", early))
 ### Syntax Errors
 There are two basic errors you will get from Python, __syntax errors__ and __exceptions__.
 You will see syntax errors a lot while learning Python. 
-```
+``` Python
 >>> while True print('Hello world')
   File "<stdin>", line 1
    while True print('Hello world')
@@ -91,7 +91,7 @@ case, a `:` was missing just before the `print` function.
 ### Exceptions
 These are more commonly referred to as runtime errors. This means your code compiled fine,
 but some activity in the code is causing the application to fail.
-``` Bash
+``` Python
 >>> 10 * (1/0)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -107,7 +107,7 @@ code to handle the error from the `try` block. The `else` block is something aga
 The code you put in the `else` will run if there are no errors. The `finally` block is code that will run everytime, 
 error or no error. This is usually a good place to put code that you want to gaurantee will run.
 
-```
+``` Python
 try:
     # This block is the normal code you want to run.
 except Exception as e:
@@ -119,7 +119,7 @@ finally:
     # This is the block that you want to gaurantee will run.
 ```
 
-```
+``` Python
 def divide(x,y):
     try:
         result=x/y
@@ -130,15 +130,30 @@ def divide(x,y):
     finally:
         print("Was your division ok?")
 
+# Notice that in Python 2.7 you get 2 and in 3.5 you get 2.0, which is a float not an int
 divide(2,1)
 divide(2,0)
 divide("2", "1")
 ```
 
 ## Context blocks
-```
-with expression as variable, expression as variable :
-    do something with the variables
+Context blocks? These are what we like to call sugar, or syntactic sugar. If you look at all
+the code you have to write to create a `try...finally` block it can be combersome. So the
+authors of Python created this nice thing to handle cases when you need to do cleanup tasks
+when the block of code is do running.
+``` Python
+with open("test.txt", "w") as f:
+    f.write("hello world")
+
+with open("test.txt", "r") as f:
+    print(f.read())
+
+# Better than
+try:
+    f = open("test", "w")
+    f.write("hello world")
+finally:
+    f.close()
 ```
 
 
