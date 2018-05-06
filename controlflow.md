@@ -155,11 +155,47 @@ try:
 finally:
     f.close()
 ```
-
-
 ## Iterators & Generators
+In programming there is a pattern for defining an object to support looping over its values. This pattern
+is called **Iterator**. We refer to objects that use this pattern as an **Iterable**. 
+
+For an object to be an **Iterable** in needs to implement a method named, `__iter__`. The `__iter__` method
+needs to return an **Iterator** object that implements a method named, `next`, which is expected to return the next
+object or value.
+
+To signal that there are no more values to return the `next` methods just needs to raise the error `StopIteration`.
+
+So, and **Iterable**, must implement a method named, `__iter__` and return on object that is an **Iterator**.
+
+An **Iterator**, must implement a method named, `next` and return the next value in its internal list. When there
+are no more values to return raise the error `StopIteration`.
+
+``` Python
+class SimpleIterable:
+    def __int__(self, items):
+        self.items = items
+
+    def __iter__(self):
+        return new SimpleIterator(self.items)
+
+class SimpleIterator:
+    def __init__(self, items):
+        self.items = items
+        self.index = 0
+
+    def next():
+        result = self.items[slef.index]
+        self.index+=1
+        return result
+
+list = new SimpleIterable([1,2,3,4,5])
+
+for item in list:
+    print(item)
+```
 
 ### Yield
+
 
 ## Comprehensions
 
