@@ -289,3 +289,12 @@ In the example we filtered the number 4, out of the first list. We filtered the 
 list. Finally we filter any output where `x` and `y` were the same value, which means we did not print a
 `(1,1)` or a `(3,3)` tuple.
 
+### Generators Again!
+We had a coding pattern for creating generators and even a handy `yield` statement. Well, there is a way to create
+a generator using comprehensions. In all the examples above we used square brackets `[]` to create our list. If you
+replace the brackets for `()` parenthesis then you will create a generator. Let's do it for the last example above.
+``` Python
+list=((x, y) for x in [1,2,3,4] if x < 4 for y in [3,1,4,6] if y < 6 if x != y)
+for i in list:
+    print(i)
+```
