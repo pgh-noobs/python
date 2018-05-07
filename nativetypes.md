@@ -32,58 +32,65 @@ Basics:
 ### Using a Tuple as a function argument
 You can use a tuple as a function parameter. This is sometimes called "tuple packing". In the example below
 you will see that all the arguments are being gathered up into a single object.
-```
->>> def add(*args):
-...     total=0
-...     for arg in args:
-...         total += arg
-...     return total
-...
->>> add(1,2,3)
-6
+``` Python
+def add(*args):
+    total=0
+    for arg in args:
+        total += arg
+    return total
+
+add(1,2,3)
 ```
 
 If you have a tuple and want to pass it to a function that uses a tuple parameter, you first need to unpack it.
 The below example is a continuation of the example above.
-```
->>> args=(1,2,3)
->>> add(*args)
-6
+``` Python
+def add(*args):
+    total=0
+    for arg in args:
+        total += arg
+    return total
+
+args=(1,2,3)
+add(*args)
 ```
 
 ### Unpacking into variables
 You can unpack a tuple into variables. This is a really fun and a handy thing to do.
 You must keep in mind that
-```
->>> numbers = [1,2,3]
->>> [a,b,c] = numbers
->>> add(a,b,c)
-6
->>> x,y,z=numbers
->>> add(x,y,z)
-6
+``` Python
+def add(*args):
+    total=0
+    for arg in args:
+        total += arg
+    return total
+
+numbers = [1,2,3]
+[a,b,c] = numbers
+add(a,b,c)
+
+x,y,z=numbers
+add(x,y,z)
 ```
 
 ### Unpacking a tuple when you don't want the whole thing
 Python 2.7 does not have basic syntax support for this. But you can do it using a slicing operator
 and unpacking to a tuple or variables. The tuple of variables is important as the slicing operator
 will return another tuple.
-```
->>> args=(1,2,3)
->>> (a,)=args[:1]
->>> a
-1
+``` Python
+args=(1,2,3)
+(a,)=args[:1]
+print(a)
 ```
 
 In python 3 there is a newer syntax for tuple unpacking. Notice here the remainder is returned as
 a list and not another tuple.
-```
->>> args=(1,2,3)
->>> a,*b=args
->>> a
-1
->>> b
-[2,3]
+``` Python
+args=(1,2,3)
+a,*b=args
+print(a)
+
+print(b)
 ```
 
 ## Set
