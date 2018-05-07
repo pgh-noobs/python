@@ -155,47 +155,137 @@ try:
 finally:
     f.close()
 ```
-## Iterators & Generators
+## Iterators
 In programming there is a pattern for defining an object to support looping over its values. This pattern
 is called **Iterator**. We refer to objects that use this pattern as an **Iterable**. 
 
 For an object to be an **Iterable** in needs to implement a method named, `__iter__`. The `__iter__` method
-needs to return an **Iterator** object that implements a method named, `next`, which is expected to return the next
+needs to return an **Iterator** object that implements a method named, `__next__`, which is expected to return the next
 object or value.
 
-To signal that there are no more values to return the `next` methods just needs to raise the error `StopIteration`.
+To signal that there are no more values to return the `__next__` methods just needs to raise the error `StopIteration`.
 
 So, and **Iterable**, must implement a method named, `__iter__` and return on object that is an **Iterator**.
 
-An **Iterator**, must implement a method named, `next` and return the next value in its internal list. When there
+An **Iterator**, must implement a method named, `__next__` and return the next value in its internal list. When there
 are no more values to return raise the error `StopIteration`.
 
 ``` Python
 class SimpleIterable:
-    def __int__(self, items):
+    def __init__(self, items):
         self.items = items
 
     def __iter__(self):
-        return new SimpleIterator(self.items)
+        return SimpleIterator(self.items)
 
 class SimpleIterator:
     def __init__(self, items):
         self.items = items
         self.index = 0
 
-    def next():
-        result = self.items[slef.index]
+    def __next__(self):
+        if self.index >= len(self.items):
+            raise StopIteration
+
+        result = self.items[self.index]
         self.index+=1
+
         return result
 
-list = new SimpleIterable([1,2,3,4,5])
+list = SimpleIterable([1,2,3,4,5])
 
 for item in list:
     print(item)
 ```
 
-### Yield
+## Generators
+Generators are a kind of iterator. You can only go through the values of a generator once. A generator 
+is good for conserving memory with large or expensive lists. It is important to note that generators 
+calculate the value each time the `__next__` method is called, this is how they conserve memory.
 
+``` Python
+class SimpleGenerator(object):
+    def __init__(self, n):
+        self.n = n
+        self.num = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        return self.next()
+
+    def next(self):
+        if self.num < self.n:
+            cur = self.num
+            self.num = self.num+1
+            return cur
+        else:
+            raise StopIteration()
+
+generator = SimpleGenerator(10)
+for i in generator:
+    print(i)
+```
+
+### Yield
+The `yield` statement in python is shortcut to making a generator from a method.
+
+``` Python
+def generatorMethod(n):
+    num = 0
+    while num < n:
+        yield num
+        num += 1
+
+generator = generatorMethod(10)
+for i in generator:
+    print(i)
+```
 
 ## Comprehensions
+Comprehensions in python are a way to create lists or generators in a compact way.
+
+Comprehensions have four main parts.
+* One of more lists
+* One variable for each current list item
+* One or more optional predicates
+* An expression to run for each output item of the compression
+
+For a simple example this will create a list that multiplies each item by 2.
+``` Python
+list=[x*2 for x in [1,2,3]]
+for i in list:
+    print(i)
+```
+In the example above the expression is `x*2`. The source list is `[1,2,3]`. And the variable is `x`.
+
+If we want to create a list from more than one source can do the following.
+``` Python
+Xs=[1,2,3]
+Ys=[4,5,6]
+list=[x*y for x in Xs for y in Ys]
+for i in list:
+    print(1)
+```
+
+Now let's say we want to filter a source list. We can just add an `if` statement after the list to filter
+its items. In the example below we will filter the list to only have even numbers.
+``` Python
+list=[x for x in range(20) if x%2==0 ]
+for i in list:
+    print(i)
+```
+
+Filtering can go one step further. You can provide a filter per list, as well as a final filter for all
+lists at the end. In the following example we will provide two lists, each with its own filter and one last
+filter.
+``` Python
+list=[(x, y) for x in [1,2,3,4] if x < 4 for y in [3,1,4,6] if y < 6 if x != y]
+for i in list:
+    print(i)
+```
+In the example we filtered the number 4, out of the first list. We filtered the number 6 out of the second
+list. Finally we filter any output where `x` and `y` were the same value, which means we did not print a
+`(1,1)` or a `(3,3)` tuple.
 
