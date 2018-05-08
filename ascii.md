@@ -1,9 +1,13 @@
-#ASCII Table
+# ASCII Table
 Dec  = Decimal Value
+
 Char = Character
 
+
 '5' has the int value 53
+
 if we write '5'-'0' it evaluates to 53-48, or the int 5
+
 if we write char c = 'B'+32; then c stores 'b'
 
 
