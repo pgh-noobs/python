@@ -1,4 +1,19 @@
 # Native Types
+## Boolean
+True, False that is about it.
+
+## None
+Many programing languages have the concept of null, or the lack of a value. In
+python this is the None type. The None object is different from the null value
+in other languages. First of all it is an object. Other than that you still
+need to check for it just like you would for null.
+``` Python
+x=None
+if x is None:
+    print("X was None")
+else:
+    print("X was not None")
+```
 
 ## Numeric Types
 ### Integer
@@ -21,12 +36,6 @@ A complex data type in python is just number followed by the letter `j` for the
 imaginary number. If you into math and this data type is for you! You may
 remember this from the talk on [Operators](operators.md)
 
-## Byte
-
-## Boolean
-
-## None
-
 ## Sequence Types
 Sequence types are a kind of data type that allows you do do some special things. 
 This includes looping over the sequence to view the items in it. Slicing the
@@ -40,6 +49,17 @@ Below are two encoding chart examples.
 [ASCII](ascii.md)  
 [UTF-8](https://www.w3schools.com/charsets/ref_html_utf8.asp)
 
+### Byte
+In python a byte comes in two flavors the bytes object which is immutable, and
+the bytesarray which is a mutable. Both are a kind of sequence type.
+``` Python
+x=b'This is a byte literal'
+for y in x:
+    print(y)
+
+print(bytes('This is a byte array and we specify the encoding','utf8'))
+```
+
 ### List
 In python a list is kind of like an array from other languages. Since python does
 not have a native array data type the list object in python is the closest thing
@@ -51,8 +71,6 @@ list=[]
 
 # Now a list with something in it
 list=[1, "2", 3.0, (4, "items")]
-```
-
 ### Tuple
 A tuple is set of values grouped together. This is different from a `list` or `array`. Tuples are also grouped
 with similar types in python called sequence objects. Being a sequence object means you can loop over the values
@@ -128,7 +146,32 @@ print(b)
 ```
 
 ## Set
+Set is like the list type. You can hold a collection of
+[hashable](https://docs.python.org/3/glossary.html#term-hashable) objects in
+a set, and you can loop over them. What does it mean to be a hashable object?
+To put it simply, the object needs to implement two specific methods and the
+hash value of the object can never change. The two methods are `__hash__()` and
+`__eq__()`. Sets can be compared just like numbers and string.
 
+The primary difference between a `set` and a `list` is that a set holds unique
+items. Run the example below to see what happens.
+``` Python
+x=set('adcda')
+for c in x:
+    print(c)
+```
 ## Dict(ionary)
+A `dict` in python is a special type that has two parts for each item,
+a key and a value. The key must also be a [hashable](https://docs.python.org/3/glossary.html#term-hashable)
+object. Now a dictionary key is just like the `set` type, there can only be
+one. You will want to use a `dict` object when you have a value to go with your
+key, otherwise use a set. The `dict` object provides very fast access to data
+that you store in it. For example in big O notation the method to get a value
+is O(1), this means that no matter how much data is in the object the physical
+time to get a value is constant.
+``` Python
+x=dict()
+x['a']="hello"
 
-
+x={'a':"hello"}
+```
