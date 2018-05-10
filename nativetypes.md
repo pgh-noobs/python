@@ -4,7 +4,7 @@ True, False that is about it.
 
 ## None
 Many programing languages have the concept of null, or the lack of a value. In
-python this is the None type. The None object is different from the null value
+python this is the `None` type. The `None` object is different from the null value
 in other languages. First of all it is an object. Other than that you still
 need to check for it just like you would for null.
 ``` Python
@@ -32,13 +32,13 @@ There are finer details about floats. If you really want to get into the details
 of it checkout the python [docs](https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex) 
 
 ### Complex
-A complex data type in python is just number followed by the letter `j` for the
-imaginary number. If you into math and this data type is for you! You may
+A complex data type in python is just a number followed by the letter `j` for the
+imaginary number. If you are into math then this data type is for you! You may
 remember this from the talk on [Operators](operators.md)
 
 ## Sequence Types
 Sequence types are a kind of data type that allows you do do some special things. 
-This includes looping over the sequence to view the items in it. Slicing the
+This includes looping over the sequence to view the items in it. Slicing a
 sequence into smaller sequences and a few others.
  
 ### String
@@ -50,8 +50,8 @@ Below are two encoding chart examples.
 [UTF-8](https://www.w3schools.com/charsets/ref_html_utf8.asp)
 
 ### Byte
-In python a byte comes in two flavors the bytes object which is immutable, and
-the bytesarray which is a mutable. Both are a kind of sequence type.
+In python a byte comes in two flavors the `bytes` object which is immutable, and
+the `bytesarray` which is a mutable. Both are a kind of sequence type.
 ``` Python
 x=b'This is a byte literal'
 for y in x:
@@ -61,8 +61,8 @@ print(bytes('This is a byte array and we specify the encoding','utf8'))
 ```
 
 ### List
-In python a list is kind of like an array from other languages. Since python does
-not have a native array data type the list object in python is the closest thing
+In python a `list` is kind of like an array from other languages. Since python does
+not have a native array data type the `list` object in python is the closest thing
 you have to an array. There is an array module that can be used in python
 but it is not part of the basic language. 
 ``` Python
@@ -71,6 +71,7 @@ list=[]
 
 # Now a list with something in it
 list=[1, "2", 3.0, (4, "items")]
+```
 ### Tuple
 A tuple is set of values grouped together. This is different from a `list` or `array`. Tuples are also grouped
 with similar types in python called sequence objects. Being a sequence object means you can loop over the values
@@ -82,7 +83,7 @@ Basics:
 * Comparison operators work with tuples
 
 ### Using a Tuple as a function argument
-You can use a tuple as a function parameter. This is sometimes called "tuple packing". In the example below
+You can use a `tuple` as a function parameter. This is sometimes called "tuple packing". In the example below
 you will see that all the arguments are being gathered up into a single object.
 ``` Python
 def add(*args):
@@ -94,7 +95,7 @@ def add(*args):
 add(1,2,3)
 ```
 
-If you have a tuple and want to pass it to a function that uses a tuple parameter, you first need to unpack it.
+If you have a `tuple` and want to pass it to a function that uses a `tuple` parameter, you first need to unpack it.
 The below example is a continuation of the example above.
 ``` Python
 def add(*args):
@@ -108,8 +109,8 @@ add(*args)
 ```
 
 ### Unpacking into variables
-You can unpack a tuple into variables. This is a really fun and a handy thing to do.
-You must keep in mind that
+You can unpack a `tuple` into variables. This is a really fun and a handy thing to do.
+You must keep in mind that you need to know how many items are in the `tuple`.
 ``` Python
 def add(*args):
     total=0
@@ -127,16 +128,16 @@ add(x,y,z)
 
 ### Unpacking a tuple when you don't want the whole thing
 Python 2.7 does not have basic syntax support for this. But you can do it using a slicing operator
-and unpacking to a tuple or variables. The tuple of variables is important as the slicing operator
-will return another tuple.
+and unpacking to a tuple or variables. The `tuple` of variables is important as the slicing operator
+will return another `tuple`.
 ``` Python
 args=(1,2,3)
 (a,)=args[:1]
 print(a)
 ```
 
-In python 3 there is a newer syntax for tuple unpacking. Notice here the remainder is returned as
-a list and not another tuple.
+In python 3 there is a newer syntax for `tuple` unpacking. Notice here the remainder is returned as
+a `list` and not another tuple.
 ``` Python
 args=(1,2,3)
 a,*b=args
@@ -146,9 +147,9 @@ print(b)
 ```
 
 ## Set
-Set is like the list type. You can hold a collection of
+Set is like the `list` type. You can hold a collection of
 [hashable](https://docs.python.org/3/glossary.html#term-hashable) objects in
-a set, and you can loop over them. What does it mean to be a hashable object?
+a `set`, and you can loop over them. What does it mean to be a hashable object?
 To put it simply, the object needs to implement two specific methods and the
 hash value of the object can never change. The two methods are `__hash__()` and
 `__eq__()`. Sets can be compared just like numbers and string.
@@ -166,7 +167,8 @@ a key and a value. The key must also be a [hashable](https://docs.python.org/3/g
 object. Now a dictionary key is just like the `set` type, there can only be
 one. You will want to use a `dict` object when you have a value to go with your
 key, otherwise use a set. The `dict` object provides very fast access to data
-that you store in it. For example in big O notation the method to get a value
+that you store in it. For example in [Big O notation](https://en.wikipedia.org/wiki/Big_O_notation)
+ the method to get a value
 is O(1), this means that no matter how much data is in the object the physical
 time to get a value is constant.
 ``` Python
