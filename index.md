@@ -5,3 +5,5 @@ This season is about learning to code with Python.
 * Episode 1 - Basic Syntax and Operators
   * [Syntax](syntax.md)
   * [Operators](operators.md)
+  * [Native Type](nativetypes.md)
+  * [Controlflow](controlflow.md)
