@@ -52,12 +52,32 @@ Below are two encoding chart examples.
 ### Byte
 In python a byte comes in two flavors the `bytes` object which is immutable, and
 the `bytesarray` which is a mutable. Both are a kind of sequence type.
+
+**NOTE** In python 2.7 the `b''` will return a string object and in python 3.x
+it will be a `bytes` object. 
 ``` Python
 x=b'This is a byte literal'
 for y in x:
     print(y)
 
 print(bytes('This is a byte array and we specify the encoding','utf8'))
+```
+Python 2.7 Example
+```
+>>>x=b'www'
+>>>x
+'www'
+>>>type(x)
+<type 'str'>
+```
+
+Python 3.x Example
+```
+>>>x=b'www'
+>>>x
+b'www'
+>>>type(x)
+<class 'bytes'>
 ```
 
 ### List
@@ -118,10 +138,16 @@ def add(*args):
         total += arg
     return total
 
-numbers = [1,2,3]
-[a,b,c] = numbers
+# First we create a tuple
+numbers = (1,2,3)
+
+# Now we can unpack it to variables that are in a temporary tuple
+(a,b,c) = numbers
+
+# With the variables unpacked we can pass them as arguments to the add function
 add(a,b,c)
 
+# We can also unpack the tuple into variables without the surrounding parenthesis
 x,y,z=numbers
 add(x,y,z)
 ```

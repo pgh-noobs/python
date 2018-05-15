@@ -41,7 +41,7 @@ while a<=10 :
 else :
     print("This is the else clause")
 
-print("a is equal to " + a)
+print("a is equal to " + str(a))
 ```
 
 ``` Python
